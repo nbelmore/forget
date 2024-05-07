@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D Game</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrollbars */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+        }
+        canvas {
+            display: block; /* Remove gaps */
+            width: 100%;
+            height: 100%;
+        }
+        #health-bar {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 200px;
+            height: 25px;
+            background-color: #555;
+        }
+        #health {
+            width: 100%; /* Initialize with full health */
+            height: 100%;
+            background-color: #f00;
+            transition: width 0.3s ease-in-out; /* Smooth transition for health changes */
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.140.0/build/three.min.js"></script>
+    <script src="game.js" defer></script>
+    <script src="controls.js" defer></script>
+    <script src="level1.js" defer></script>
+    <script src="level2.js" defer></script>
+    <!-- Include other levels similarly -->
+</head>
+<body>
+    <div id="health-bar">
+        <div id="health"></div>
+    </div>
+    <script>
+        window.onload = () => {
+            initGame();
+        };
+    </script>
+</body>
+</html>
